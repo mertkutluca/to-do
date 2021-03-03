@@ -11,7 +11,12 @@ final class ToDoListVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "test"
-        self.view.backgroundColor = .red
+        self.navigationItem.title = "To Do List"
+    }
+}
+
+extension ToDoListVC: ToDoListVMOutputDelegate {
+    func updateTable(_ insertions: [IndexPath], deletions: [IndexPath]) {
+        // TO DO: Update table here
     }
 }

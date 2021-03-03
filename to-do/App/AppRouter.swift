@@ -16,3 +16,9 @@ final class AppRouter {
         window.makeKeyAndVisible()
     }
 }
+
+extension AppRouter: ToDoListNavigationDelegate {
+    func showDetail() {
+        // TO DO: Will be implemented
+    }
+}
