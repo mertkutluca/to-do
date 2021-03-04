@@ -13,13 +13,13 @@ protocol ToDoListVMProtocol {
     func load()
     
     func getNumberOfItem(for state: ToDoState) -> Int
-    func getItem(at: Int, for state: ToDoState) -> ToDoListItemPresentation
+    func getItem(at: Int, for state: ToDoState) -> ToDoListPresentation
     
-    func addToDo(addingToDo: ToDoListItemPresentation)
+    func addToDo(addingToDo: ToDoListPresentation)
     func removeToDo(at: Int)
 }
 
-protocol ToDoListVMOutputDelegate {
+protocol ToDoListVMOutputDelegate: class {
     func updateTable(_ insertions: [IndexPath], deletions: [IndexPath])
 }
 
@@ -29,5 +29,5 @@ protocol ToDoListNavigationDelegate {
 
 enum ToDoState: Int {
     case active = 0
-    case expired = 1
+    case completed = 1
 }
