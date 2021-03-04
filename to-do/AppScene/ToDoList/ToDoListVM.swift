@@ -8,7 +8,7 @@
 import Foundation
 
 final class ToDoListVM: ToDoListVMProtocol {
-    var delegate: ToDoListVMOutputDelegate?
+    weak var delegate: ToDoListVMOutputDelegate?
     
     private let todos: [ToDoListPresentation] = [
         ToDoListPresentation(title: "title 1",

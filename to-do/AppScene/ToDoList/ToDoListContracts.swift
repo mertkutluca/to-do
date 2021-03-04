@@ -19,7 +19,7 @@ protocol ToDoListVMProtocol {
     func removeToDo(at: Int)
 }
 
-protocol ToDoListVMOutputDelegate {
+protocol ToDoListVMOutputDelegate: class {
     func updateTable(_ insertions: [IndexPath], deletions: [IndexPath])
 }
 
