@@ -21,10 +21,17 @@ final class ToDoListVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "To Do List"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                                 target: self,
+                                                                 action: #selector(showAddTodo))
+    }
+    
+    @objc private func showAddTodo() {
+        print("Trigger add todo scene here")
     }
     
     // MARK: Segmented Control
-    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+    @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         tableView.reloadData()
     }
     
