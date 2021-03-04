@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         
-        app.router.start(window: self.window!)
+        if #available(iOS 13, *) {
+            app.router.start(window: self.window!)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
