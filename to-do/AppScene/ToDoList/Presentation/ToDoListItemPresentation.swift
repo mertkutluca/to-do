@@ -11,5 +11,5 @@ struct ToDoListItemPresentation {
     let title: String
     let detail: String
     let dueDate: Date
-    let isExpired: Bool
+    let state: ToDoState
 }

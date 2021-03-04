@@ -15,17 +15,30 @@ final class ToDoListVC: UITableViewController {
         }
     }
     
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
+    
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "To Do List"
     }
     
-    // UITableViewDataSource
+    // MARK: Segmented Control
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        tableView.reloadData()
+    }
+    
+    // MARK: UITableViewDataSource
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let todo = vm?.getItem(at: indexPath.row)
+        guard
+            let segmentedState = ToDoState(rawValue: segmentedControl.selectedSegmentIndex),
+            let todo = vm?.getItem(at: indexPath.row, for: segmentedState) else {
+            fatalError("Can not create segmented state or todo object")
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "todo-list-cell", for: indexPath)
-        cell.textLabel?.text = todo?.title
-        cell.detailTextLabel?.text = todo?.detail
+        cell.textLabel?.text = todo.title
+        cell.detailTextLabel?.text = todo.detail
         
         return cell
     }
@@ -35,14 +48,16 @@ final class ToDoListVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let numberOfItem = vm?.getNumberOfItem() else {
-            return 0
+        guard
+            let segmentedState = ToDoState(rawValue: segmentedControl.selectedSegmentIndex),
+            let numberOfItem = vm?.getNumberOfItem(for: segmentedState) else {
+            fatalError("Can not create segmented state or numberOfItem")
         }
         
         return numberOfItem
     }
     
-    // UITableViewDelegate
+    // MARK: UITableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
