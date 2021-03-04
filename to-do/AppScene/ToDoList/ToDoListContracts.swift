@@ -29,8 +29,3 @@ protocol ToDoListVMOutputDelegate: class {
 protocol ToDoListNavigationDelegate {
     func showDetail()
 }
-
-enum ToDoState: Int {
-    case active = 0
-    case completed = 1
-}

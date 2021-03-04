@@ -9,9 +9,12 @@ import UIKit
 
 final class TodoDetailBuilder {
     
-    static func build() -> UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
+    static func build() -> ToDoDetailVC {
+        let sb = UIStoryboard(name: "ToDoDetail", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as! ToDoDetailVC
+        let vm = ToDoDetailVM()
+        vm.load()
+        vc.vm = vm
         
         return vc
     }
