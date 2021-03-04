@@ -9,6 +9,7 @@ import Foundation
 
 protocol ToDoListVMProtocol {
     var delegate: ToDoListVMOutputDelegate? { get set }
+    var navDelegate: ToDoListNavigationDelegate? { get set }
     
     func load()
     
@@ -16,7 +17,9 @@ protocol ToDoListVMProtocol {
     func getItem(at: Int, for state: ToDoState) -> ToDoListItemPresentation
     
     func addToDo(addingToDo: ToDoListItemPresentation)
-    func removeToDo(at: Int)
+    func removeToDo(at: Int, for state: ToDoState)
+    
+    func showDetail(at: Int, for state: ToDoState)
 }
 
 protocol ToDoListVMOutputDelegate {

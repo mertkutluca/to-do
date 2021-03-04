@@ -9,6 +9,7 @@ import Foundation
 
 final class ToDoListVM: ToDoListVMProtocol {
     var delegate: ToDoListVMOutputDelegate?
+    var navDelegate: ToDoListNavigationDelegate?
     
     private let todos: [ToDoListItemPresentation] = [
         ToDoListItemPresentation(title: "title 1",
@@ -80,7 +81,11 @@ final class ToDoListVM: ToDoListVMProtocol {
         // TO DO: Will be implemented
     }
     
-    func removeToDo(at: Int) {
+    func removeToDo(at: Int, for state: ToDoState) {
         // TO DO: Will be implemented
+    }
+    
+    func showDetail(at: Int, for state: ToDoState) {
+        navDelegate?.showDetail()
     }
 }

@@ -14,6 +14,7 @@ final class ToDoListBuilder {
         let vc = sb.instantiateInitialViewController() as! ToDoListVC
         let vm = ToDoListVM()
         vm.load()
+        vm.navDelegate = app.router
         vc.vm = vm
         
         return vc
