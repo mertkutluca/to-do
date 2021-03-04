@@ -14,7 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        app.router.start(window: UIWindow(frame: UIScreen.main.bounds))
+        guard #available(iOS 13, *) else {
+            app.router.start(window: UIWindow(frame: UIScreen.main.bounds))
+            return true
+        }
+        
         return true
     }
 
