@@ -26,6 +26,7 @@
 		B8D0831825F0F369008BC9CC /* ToDoDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0831725F0F369008BC9CC /* ToDoDetailVM.swift */; };
 		B8D0831B25F0F37F008BC9CC /* ToDoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0831A25F0F37F008BC9CC /* ToDoDetailVC.swift */; };
 		B8D0831E25F0F395008BC9CC /* ToDoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8D0831D25F0F395008BC9CC /* ToDoDetail.storyboard */; };
+		B8D0832425F12AA2008BC9CC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0832325F12AA2008BC9CC /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B8D0831725F0F369008BC9CC /* ToDoDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailVM.swift; sourceTree = "<group>"; };
 		B8D0831A25F0F37F008BC9CC /* ToDoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailVC.swift; sourceTree = "<group>"; };
 		B8D0831D25F0F395008BC9CC /* ToDoDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoDetail.storyboard; sourceTree = "<group>"; };
+		B8D0832325F12AA2008BC9CC /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				B8D082C125EF7B95008BC9CC /* Assets.xcassets */,
 				B8D082CD25EF8B1D008BC9CC /* App */,
 				B8D082D825EF8E8A008BC9CC /* AppScene */,
+				B8D0832225F12A89008BC9CC /* Extension */,
 				B8D0831225F0EF9D008BC9CC /* Helper */,
 				B8D082C325EF7B95008BC9CC /* LaunchScreen.storyboard */,
 			);
@@ -160,6 +163,14 @@
 				B8D0831325F0EFB0008BC9CC /* ToDoState.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B8D0832225F12A89008BC9CC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B8D0832325F12AA2008BC9CC /* UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 				B8D082DE25EF8EF4008BC9CC /* ToDoListVC.swift in Sources */,
 				B8D0830125F0C51A008BC9CC /* ToDoDetailBuilder.swift in Sources */,
 				B8D082DB25EF8ECC008BC9CC /* ToDoListBuilder.swift in Sources */,
+				B8D0832425F12AA2008BC9CC /* UIColor.swift in Sources */,
 				B8D082F725EFA3BF008BC9CC /* ToDoListPresentation.swift in Sources */,
 				B8D082D125EF8BDB008BC9CC /* AppContainer.swift in Sources */,
 				B8D082F025EFA069008BC9CC /* ToDoListContracts.swift in Sources */,

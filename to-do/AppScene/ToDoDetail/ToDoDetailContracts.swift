@@ -13,7 +13,13 @@ protocol ToDoDetailVMProtocol {
     func load()
     
     func delete()
-    func save(_ title: String, detail: String, dueDate: Date, state: ToDoState)
+    func save(title: String, detail: String, dueDate: Date, state: ToDoState)
+    
+    func getTitle() -> String
+    func getDetail() -> String
+    func getDueDate() -> Date
+    func getState() -> ToDoState
+    func isNewToDo() -> Bool
 }
 
 protocol ToDoDetailVMOutputDelegate: class {
