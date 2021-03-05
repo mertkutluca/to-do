@@ -66,7 +66,14 @@ final class ToDoListVC: UITableViewController {
     
     // MARK: UITableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        guard let segmentedState = ToDoState(rawValue: segmentedControl.selectedSegmentIndex) else {
+            return
+        }
+        
+        vm?.showDetail(at: indexPath.row, for: segmentedState)
     }
 }
 
