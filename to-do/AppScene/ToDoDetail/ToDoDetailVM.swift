@@ -13,12 +13,18 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
     
     private var item: ToDoDetailPresentation?
     
+    private let toDoId: String?
+    
+    init(id: String?) {
+        toDoId = id
+    }
+    
     func load() {
         item = ToDoDetailPresentation(title: "title title",
                                       detail: "detail detail detail detail detail detail detail detail detail",
                                       dueDate: Date(timeIntervalSince1970: TimeInterval(1614772747)),
                                       state: .active,
-                                      isNewTodo: false)
+                                      isNewTodo: toDoId == nil)
     }
     
     func delete() {
@@ -27,8 +33,10 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
     }
     
     func save(title: String, detail: String, dueDate: Date, state: ToDoState) {
-        // Save after database manager
-        print("Handle save")
+        app.databaseManager.save(dto: ToDoDTO(title: title,
+                                              detail: detail,
+                                              dueDate: dueDate,
+                                              state: state))
     }
     
     func getTitle() -> String {

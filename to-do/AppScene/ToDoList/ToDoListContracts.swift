@@ -20,6 +20,7 @@ protocol ToDoListVMProtocol {
     func removeToDo(at: Int, for state: ToDoState)
     
     func showDetail(at: Int, for state: ToDoState)
+    func showCreateNewToDo()
 }
 
 protocol ToDoListVMOutputDelegate: class {
@@ -27,5 +28,5 @@ protocol ToDoListVMOutputDelegate: class {
 }
 
 protocol ToDoListNavigationDelegate {
-    func showDetail()
+    func showDetail(for toDoId: String?)
 }

@@ -27,7 +27,7 @@ final class ToDoListVC: UITableViewController {
     }
     
     @objc private func showAddTodo() {
-        print("Trigger add todo scene here")
+        vm?.showCreateNewToDo()
     }
     
     // MARK: Segmented Control

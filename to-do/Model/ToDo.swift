@@ -9,24 +9,14 @@ import Foundation
 import RealmSwift
 
 class ToDo: Object {
-    @objc dynamic var _id: String!
-    dynamic var title: String!
-    dynamic var detail: String!
-    dynamic var dueDate: Date!
-    dynamic var state: Int!
-    
-    convenience init(title: String, detail: String, dueDate: Date, state: ToDoState) {
-        self.init()
-        self._id = UUID().uuidString
-        self.title = title
-        self.detail = detail
-        self.dueDate = dueDate
-        self.state = state.rawValue
-    }
+    @objc dynamic var _id: String = UUID().uuidString
+    @objc dynamic var title: String = ""
+    @objc dynamic var detail: String = ""
+    @objc dynamic var dueDate: Date = Date()
+    @objc dynamic var state: Int = 0
     
     convenience init(dto: ToDoDTO) {
         self.init()
-        self._id = UUID().uuidString
         self.title = dto.title
         self.detail = dto.detail
         self.dueDate = dto.dueDate

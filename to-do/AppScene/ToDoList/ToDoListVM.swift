@@ -86,6 +86,10 @@ final class ToDoListVM: ToDoListVMProtocol {
     }
     
     func showDetail(at: Int, for state: ToDoState) {
-        navDelegate?.showDetail()
+        navDelegate?.showDetail(for: nil)
+    }
+    
+    func showCreateNewToDo() {
+        navDelegate?.showDetail(for: nil)
     }
 }
