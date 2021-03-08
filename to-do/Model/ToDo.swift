@@ -23,6 +23,13 @@ class ToDo: Object {
         self.state = dto.state.rawValue
     }
     
+    func toPresent() -> ToDoListPresentation {
+        return ToDoListPresentation(title: self.title,
+                                    detail: self.detail,
+                                    dueDate: self.dueDate,
+                                    state: ToDoState(rawValue: self.state) ?? .active)
+    }
+    
     override static func primaryKey() -> String? {
         return "_id"
     }
