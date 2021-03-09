@@ -13,22 +13,37 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
     
     private var item: ToDoDetailPresentation?
     
+    private let toDoId: String?
+    
+    init(id: String?) {
+        toDoId = id
+    }
+    
     func load() {
-        item = ToDoDetailPresentation(title: "title title",
-                                      detail: "detail detail detail detail detail detail detail detail detail",
-                                      dueDate: Date(timeIntervalSince1970: TimeInterval(1614772747)),
-                                      state: .active,
+        guard let id = toDoId, let toDoDTO = app.databaseManager.getTodo(key: id) else {
+            item = ToDoDetailPresentation.empty
+            return
+        }
+        
+        item = ToDoDetailPresentation(title: toDoDTO.title,
+                                      detail: toDoDTO.detail,
+                                      dueDate: toDoDTO.dueDate,
+                                      state: ToDoState(rawValue: toDoDTO.state) ?? .active,
                                       isNewTodo: false)
     }
     
     func delete() {
-        // Delete after database manager
-        print("Handle delete")
+        if let _id = toDoId {
+            app.databaseManager.delete(_id: _id)
+        }
     }
     
     func save(title: String, detail: String, dueDate: Date, state: ToDoState) {
-        // Save after database manager
-        print("Handle save")
+        app.databaseManager.save(dto: ToDoDTO(_id: toDoId ?? UUID().uuidString,
+                                              title: title,
+                                              detail: detail,
+                                              dueDate: dueDate,
+                                              state: state))
     }
     
     func getTitle() -> String {

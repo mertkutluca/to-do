@@ -27,11 +27,14 @@ final class ToDoListVC: UITableViewController {
     }
     
     @objc private func showAddTodo() {
-        print("Trigger add todo scene here")
+        vm?.showCreateNewToDo()
     }
     
     // MARK: Segmented Control
     @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        if let segmentedState = ToDoState(rawValue: segmentedControl.selectedSegmentIndex) {
+            vm?.startObserving(for: segmentedState)
+        }
         tableView.reloadData()
     }
     
@@ -75,10 +78,29 @@ final class ToDoListVC: UITableViewController {
         
         vm?.showDetail(at: indexPath.row, for: segmentedState)
     }
+    
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        guard let segmentedState = ToDoState(rawValue: segmentedControl.selectedSegmentIndex) else {
+            return
+        }
+        if editingStyle == .delete {
+            vm?.removeToDo(at: indexPath.row, for: segmentedState)
+        }
+    }
 }
 
 extension ToDoListVC: ToDoListVMOutputDelegate {
-    func updateTable(_ insertions: [IndexPath], deletions: [IndexPath]) {
-        // TO DO: Update table here
+    func updateTable(_ insertions: [IndexPath], deletions: [IndexPath], modifications: [IndexPath]) {
+        tableView.performBatchUpdates({
+            tableView.deleteRows(at: deletions, with: .automatic)
+            tableView.insertRows(at: insertions, with: .automatic)
+            tableView.reloadRows(at: modifications, with: .automatic)
+        })
+    }
+    
+    func reloadTable() {
+        tableView.reloadData()
     }
 }

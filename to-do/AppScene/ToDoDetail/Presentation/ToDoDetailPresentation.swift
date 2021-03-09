@@ -13,4 +13,10 @@ struct ToDoDetailPresentation {
     let dueDate: Date
     let state: ToDoState
     let isNewTodo: Bool
+    
+    static let empty = ToDoDetailPresentation(title: "",
+                                              detail: "",
+                                              dueDate: Date(),
+                                              state: .active,
+                                              isNewTodo: true)
 }
