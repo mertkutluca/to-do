@@ -32,18 +32,22 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
                                       isNewTodo: false)
     }
     
-    func delete() {
-        if let _id = toDoId {
-            app.databaseManager.delete(_id: _id)
+    func delete(_ completion: (Bool) -> Void) {
+        guard let _id = toDoId else {
+            completion(false)
+            return
         }
+        app.databaseManager.delete(_id: _id)
+        completion(true)
     }
     
-    func save(title: String, detail: String, dueDate: Date, state: ToDoState) {
+    func save(title: String, detail: String, dueDate: Date, state: ToDoState, completion: (Bool) -> Void) {
         app.databaseManager.save(dto: ToDoDTO(_id: toDoId ?? UUID().uuidString,
                                               title: title,
                                               detail: detail,
                                               dueDate: dueDate,
                                               state: state))
+        completion(true)
     }
     
     func getTitle() -> String {

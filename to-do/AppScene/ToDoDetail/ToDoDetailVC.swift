@@ -44,11 +44,23 @@ final class ToDoDetailVC: UIViewController {
         vm?.save(title: titleTextView.text,
                  detail: detailTextView.text,
                  dueDate: datePicker.date,
-                 state: isCompletedSwitch.isOn ? .completed : .active)
+                 state: isCompletedSwitch.isOn ? .completed : .active) { success in
+            if success {
+                dismiss(animated: true, completion: nil)
+            } else {
+                // Show error prompt
+            }
+        }
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        vm?.delete()
+        vm?.delete { success in
+            if success {
+                dismiss(animated: true, completion: nil)
+            } else {
+                // Show error prompt
+            }
+        }
     }
 }
 

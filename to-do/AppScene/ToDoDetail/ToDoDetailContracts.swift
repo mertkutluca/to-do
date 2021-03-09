@@ -12,8 +12,12 @@ protocol ToDoDetailVMProtocol {
     
     func load()
     
-    func delete()
-    func save(title: String, detail: String, dueDate: Date, state: ToDoState)
+    func delete(_ completion: (_ success: Bool) -> Void)
+    func save(title: String,
+              detail: String,
+              dueDate: Date,
+              state: ToDoState,
+              completion: (_ success: Bool) -> Void)
     
     func getTitle() -> String
     func getDetail() -> String
