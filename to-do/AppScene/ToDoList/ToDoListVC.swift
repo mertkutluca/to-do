@@ -75,6 +75,17 @@ final class ToDoListVC: UITableViewController {
         
         vm?.showDetail(at: indexPath.row, for: segmentedState)
     }
+    
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        guard let segmentedState = ToDoState(rawValue: segmentedControl.selectedSegmentIndex) else {
+            return
+        }
+        if editingStyle == .delete {
+            vm?.removeToDo(at: indexPath.row, for: segmentedState)
+        }
+    }
 }
 
 extension ToDoListVC: ToDoListVMOutputDelegate {

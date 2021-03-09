@@ -43,7 +43,14 @@ final class ToDoListVM: ToDoListVMProtocol {
     }
     
     func removeToDo(at: Int, for state: ToDoState) {
-        // TO DO: Will be implemented
+        let toDoId: String
+        switch state {
+        case .completed:
+            toDoId = completedTodos[at]._id
+        case .active:
+            toDoId = activeTodos[at]._id
+        }
+        app.databaseManager.delete(_id: toDoId)
     }
     
     func showDetail(at: Int, for state: ToDoState) {

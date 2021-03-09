@@ -33,8 +33,9 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
     }
     
     func delete() {
-        // Delete after database manager
-        print("Handle delete")
+        if let _id = toDoId {
+            app.databaseManager.delete(_id: _id)
+        }
     }
     
     func save(title: String, detail: String, dueDate: Date, state: ToDoState) {

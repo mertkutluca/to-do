@@ -35,7 +35,9 @@ final class DatabaseManager: DatabaseManagerProtocol {
             return
         }
         
-        realm.delete(todo)
+        try! realm.write {
+            realm.delete(todo)
+        }
     }
     
     func getTodos() -> Results<ToDo> {
