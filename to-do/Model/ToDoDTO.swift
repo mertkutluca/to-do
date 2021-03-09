@@ -8,6 +8,7 @@
 import Foundation
 
 struct ToDoDTO {
+    let _id: String
     let title: String
     let detail: String
     let dueDate: Date

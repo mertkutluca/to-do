@@ -47,7 +47,14 @@ final class ToDoListVM: ToDoListVMProtocol {
     }
     
     func showDetail(at: Int, for state: ToDoState) {
-        navDelegate?.showDetail(for: nil)
+        let toDoId: String
+        switch state {
+        case .completed:
+            toDoId = completedTodos[at]._id
+        case .active:
+            toDoId = activeTodos[at]._id
+        }
+        navDelegate?.showDetail(for: toDoId)
     }
     
     func showCreateNewToDo() {

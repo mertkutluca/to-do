@@ -25,7 +25,7 @@ final class DatabaseManager: DatabaseManagerProtocol {
         let todo = ToDo(dto: dto)
         
         try! realm.write {
-            realm.add(todo)
+            realm.add(todo, update: .modified)
         }
     }
     

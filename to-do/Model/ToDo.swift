@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class ToDo: Object {
-    @objc dynamic var _id: String = UUID().uuidString
+    @objc dynamic var _id: String = ""
     @objc dynamic var title: String = ""
     @objc dynamic var detail: String = ""
     @objc dynamic var dueDate: Date = Date()
@@ -17,6 +17,7 @@ class ToDo: Object {
     
     convenience init(dto: ToDoDTO) {
         self.init()
+        self._id = dto._id
         self.title = dto.title
         self.detail = dto.detail
         self.dueDate = dto.dueDate
