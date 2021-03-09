@@ -32,6 +32,9 @@ final class ToDoListVC: UITableViewController {
     
     // MARK: Segmented Control
     @IBAction private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        if let segmentedState = ToDoState(rawValue: segmentedControl.selectedSegmentIndex) {
+            vm?.startObserving(for: segmentedState)
+        }
         tableView.reloadData()
     }
     
@@ -89,7 +92,15 @@ final class ToDoListVC: UITableViewController {
 }
 
 extension ToDoListVC: ToDoListVMOutputDelegate {
-    func updateTable(_ insertions: [IndexPath], deletions: [IndexPath]) {
-        // TO DO: Update table here
+    func updateTable(_ insertions: [IndexPath], deletions: [IndexPath], modifications: [IndexPath]) {
+        tableView.performBatchUpdates({
+            tableView.deleteRows(at: deletions, with: .automatic)
+            tableView.insertRows(at: insertions, with: .automatic)
+            tableView.reloadRows(at: modifications, with: .automatic)
+        })
+    }
+    
+    func reloadTable() {
+        tableView.reloadData()
     }
 }

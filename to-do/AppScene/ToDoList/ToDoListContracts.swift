@@ -21,10 +21,13 @@ protocol ToDoListVMProtocol {
     
     func showDetail(at: Int, for state: ToDoState)
     func showCreateNewToDo()
+    
+    func startObserving(for state: ToDoState)
 }
 
 protocol ToDoListVMOutputDelegate: class {
-    func updateTable(_ insertions: [IndexPath], deletions: [IndexPath])
+    func updateTable(_ insertions: [IndexPath], deletions: [IndexPath], modifications: [IndexPath])
+    func reloadTable()
 }
 
 protocol ToDoListNavigationDelegate {
