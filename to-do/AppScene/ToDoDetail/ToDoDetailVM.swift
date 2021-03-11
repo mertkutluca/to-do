@@ -13,40 +13,44 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
     
     private var item: ToDoDetailPresentation?
     
-    private let toDoId: String?
+    private let toDo: ToDoDTO?
     
-    init(id: String?) {
-        toDoId = id
+    private let repository: ToDoRepository = ToDoRepository(manager: app.databaseManager)
+    
+    init(toDo: ToDoDTO?) {
+        self.toDo = toDo
     }
     
     func load() {
-        guard let id = toDoId, let toDoDTO = app.databaseManager.getTodo(key: id) else {
+        guard let toDo = toDo else {
             item = ToDoDetailPresentation.empty
             return
         }
         
-        item = ToDoDetailPresentation(title: toDoDTO.title,
-                                      detail: toDoDTO.detail,
-                                      dueDate: toDoDTO.dueDate,
-                                      state: ToDoState(rawValue: toDoDTO.state) ?? .active,
+        item = ToDoDetailPresentation(title: toDo.title,
+                                      detail: toDo.detail,
+                                      dueDate: toDo.dueDate,
+                                      state: toDo.state,
                                       isNewTodo: false)
     }
     
     func delete(_ completion: (Bool) -> Void) {
-        guard let _id = toDoId else {
+        guard let _id = toDo?._id else {
             completion(false)
             return
         }
-        app.databaseManager.delete(_id: _id)
+        repository.remove(_id: _id)
         completion(true)
     }
     
     func save(title: String, detail: String, dueDate: Date, state: ToDoState, completion: (Bool) -> Void) {
-        app.databaseManager.save(dto: ToDoDTO(_id: toDoId ?? UUID().uuidString,
-                                              title: title,
-                                              detail: detail,
-                                              dueDate: dueDate,
-                                              state: state))
+        // Will be changed
+        let dto = ToDoDTO(_id: toDo?._id ?? UUID().uuidString,
+                          title: title,
+                          detail: detail,
+                          dueDate: dueDate,
+                          state: state)
+        repository.save(dto: dto)
         completion(true)
     }
     

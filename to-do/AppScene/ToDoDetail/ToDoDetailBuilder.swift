@@ -9,10 +9,10 @@ import UIKit
 
 final class TodoDetailBuilder {
     
-    static func build(for toDoId: String?) -> ToDoDetailVC {
+    static func build(for toDo: ToDoDTO?) -> ToDoDetailVC {
         let sb = UIStoryboard(name: "ToDoDetail", bundle: nil)
         let vc = sb.instantiateInitialViewController() as! ToDoDetailVC
-        let vm = ToDoDetailVM(id: toDoId)
+        let vm = ToDoDetailVM(toDo: toDo)
         vm.load()
         vc.vm = vm
         
