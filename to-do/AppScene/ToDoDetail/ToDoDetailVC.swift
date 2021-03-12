@@ -26,13 +26,16 @@ final class ToDoDetailVC: UIViewController {
         guard let vm = vm else {
             fatalError("ToDoDetailVM not initialized before constructing view")
         }
-        titleTextView.text = vm.getTitle()
+        
+        titleTextView.text = vm.forcedItem.title
         titleTextView.setBorderWithCorner()
-        detailTextView.text = vm.getDetail()
+        
+        detailTextView.text = vm.forcedItem.detail
         detailTextView.setBorderWithCorner()
-        datePicker.date = vm.getDueDate()
-        deleteButton.isHidden = vm.isNewToDo()
-        isCompletedSwitch.isOn = vm.getState() == .completed
+        
+        datePicker.date = vm.forcedItem.dueDate
+        deleteButton.isHidden = vm.forcedItem.isNewTodo
+        isCompletedSwitch.isOn = vm.forcedItem.state == .completed
     }
     
     // MARK: Actions

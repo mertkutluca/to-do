@@ -17,6 +17,13 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
     
     private let repository: ToDoRepository
     
+    lazy var forcedItem: ToDoDetailPresentation = {
+        guard let item = item else {
+            fatalError("Presentation can not be loaded properly")
+        }
+        return item
+    }()
+    
     init(toDo: ToDoDTO?, repo: ToDoRepository) {
         self.toDo = toDo
         repository = repo
@@ -54,33 +61,5 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
         repository.save(dto: dto)
         completion(true)
     }
-    
-    func getTitle() -> String {
-        return forcedItem.title
-    }
-    
-    func getDetail() -> String {
-        return forcedItem.detail
-    }
-    
-    func getDueDate() -> Date {
-        return forcedItem.dueDate
-    }
-    
-    func getState() -> ToDoState {
-        return forcedItem.state
-    }
-    
-    func isNewToDo() -> Bool {
-        return forcedItem.isNewTodo
-    }
-    
-    // MARK: Helpers
-    private lazy var forcedItem: ToDoDetailPresentation = {
-        guard let item = item else {
-            fatalError("Presentation can not be loaded properly")
-        }
-        return item
-    }()
     
 }

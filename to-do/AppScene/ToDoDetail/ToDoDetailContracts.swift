@@ -10,20 +10,15 @@ import Foundation
 protocol ToDoDetailVMProtocol {
     var delegate: ToDoDetailVMOutputDelegate? { get set }
     
-    func load()
+    var forcedItem: ToDoDetailPresentation { get }
     
+    func load()
     func delete(_ completion: (_ success: Bool) -> Void)
     func save(title: String,
               detail: String,
               dueDate: Date,
               state: ToDoState,
               completion: (_ success: Bool) -> Void)
-    
-    func getTitle() -> String
-    func getDetail() -> String
-    func getDueDate() -> Date
-    func getState() -> ToDoState
-    func isNewToDo() -> Bool
 }
 
 protocol ToDoDetailVMOutputDelegate: class {
