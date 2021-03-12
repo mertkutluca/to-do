@@ -8,12 +8,8 @@
 import UIKit
 
 final class ToDoDetailVC: UIViewController {
-    var vm: ToDoDetailVMProtocol? {
-        didSet {
-            vm?.delegate = self
-        }
-    }
     
+    var vm: ToDoDetailVMProtocol?
     
     @IBOutlet private weak var titleTextView: UITextView!
     @IBOutlet private weak var detailTextView: UITextView!

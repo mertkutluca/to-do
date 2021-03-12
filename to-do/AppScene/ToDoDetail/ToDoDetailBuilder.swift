@@ -15,7 +15,9 @@ final class TodoDetailBuilder {
         let vm = ToDoDetailVM(toDo: toDo, repo: ToDoRepository(manager: app.databaseManager))
         vm.load()
         vc.vm = vm
+        vm.delegate = vc
         
         return vc
     }
+    
 }

@@ -18,7 +18,7 @@ protocol ToDoRepositoryProtocol {
 }
 
 final class ToDoRepository: BaseRepository<ToDo> {
-    weak var delegate: RepositoryObservingDelegate?
+    weak var observingDelegate: RepositoryObservingDelegate?
 }
 
 extension ToDoRepository: ToDoRepositoryProtocol {
@@ -46,7 +46,7 @@ extension ToDoRepository: ToDoRepositoryProtocol {
     
     func subscribe(filter: String?) {
         super.subscribe(ToDo.self, filter: filter) { (_ deletions: [Int], _ insertions: [Int], _ modifications: [Int]) in
-            self.delegate!.handleChanges(deletions, insertions: insertions, modifications: modifications)
+            self.observingDelegate!.handleChanges(deletions, insertions: insertions, modifications: modifications)
         }
     }
 }

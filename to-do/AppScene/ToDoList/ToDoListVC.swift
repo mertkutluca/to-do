@@ -9,11 +9,7 @@ import UIKit
 
 final class ToDoListVC: UITableViewController {
     
-    var vm: ToDoListVMProtocol? {
-        didSet {
-            vm?.delegate = self
-        }
-    }
+    var vm: ToDoListVMProtocol?
     
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     
