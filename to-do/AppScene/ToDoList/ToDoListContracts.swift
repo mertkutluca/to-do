@@ -31,5 +31,5 @@ protocol ToDoListVMOutputDelegate: class {
 }
 
 protocol ToDoListNavigationDelegate {
-    func showDetail(for toDoId: String?)
+    func showDetail(for toDo: ToDoDTO?)
 }

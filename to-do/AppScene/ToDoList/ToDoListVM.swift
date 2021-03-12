@@ -6,26 +6,29 @@
 //
 
 import Foundation
-import RealmSwift
 
 final class ToDoListVM: ToDoListVMProtocol {
     
     weak var delegate: ToDoListVMOutputDelegate?
     var navDelegate: ToDoListNavigationDelegate?
     
-    private let completedTodos: Results<ToDo> = app.databaseManager.getTodos().filter("state == 1")
-    private let activeTodos: Results<ToDo> = app.databaseManager.getTodos().filter("state == 0")
+    private let repository: ToDoRepository
     
-    private var completedToken: NotificationToken?
-    private var activeToken: NotificationToken?
+    private var completedTodos: [ToDoDTO]
+    private var activeTodos: [ToDoDTO]
     
-    func load() {
-        self.startObserving(for: .active)
+    private let completedStateQuery: String = "state == 1"
+    private let activeStateQuery: String = "state == 0"
+    private var currentState: ToDoState = .active
+    
+    init(repo: ToDoRepository) {
+        repository = repo
+        completedTodos = repository.getAll(filter: completedStateQuery)
+        activeTodos = repository.getAll(filter: activeStateQuery)
     }
     
-    deinit {
-        completedToken?.invalidate()
-        activeToken?.invalidate()
+    func load() {
+        self.startObserving(for: currentState)
     }
     
     func getNumberOfItem(for state: ToDoState) -> Int {
@@ -58,18 +61,16 @@ final class ToDoListVM: ToDoListVMProtocol {
         case .active:
             toDoId = activeTodos[at]._id
         }
-        app.databaseManager.delete(_id: toDoId)
+        repository.remove(_id: toDoId)
     }
     
     func showDetail(at: Int, for state: ToDoState) {
-        let toDoId: String
         switch state {
         case .completed:
-            toDoId = completedTodos[at]._id
+            navDelegate?.showDetail(for: completedTodos[at])
         case .active:
-            toDoId = activeTodos[at]._id
+            navDelegate?.showDetail(for: activeTodos[at])
         }
-        navDelegate?.showDetail(for: toDoId)
     }
     
     func showCreateNewToDo() {
@@ -77,33 +78,27 @@ final class ToDoListVM: ToDoListVMProtocol {
     }
     
     func startObserving(for state: ToDoState) {
-        switch state {
-        case .completed:
-            activeToken?.invalidate()
-            completedToken = completedTodos.observe { [weak self] (changes: RealmCollectionChange) in
-                guard let self = self else { return }
-                self.handleChanges(changes: changes)
-            }
-        case .active:
-            completedToken?.invalidate()
-            activeToken = activeTodos.observe { [weak self] (changes: RealmCollectionChange) in
-                guard let self = self else { return }
-                self.handleChanges(changes: changes)
-            }
-        }
+        currentState = state
+        repository.subscribe(filter: getQuery(for: currentState))
     }
     
-    private func handleChanges(changes: RealmCollectionChange<Results<ToDo>>) {
-        switch changes {
-        case .initial:
-            self.delegate?.reloadTable()
-        case .update(_, let deletions, let insertions, let modifications):
-            self.delegate?.updateTable(insertions.map({ IndexPath(row: $0, section: 0) }),
-                                       deletions: deletions.map({ IndexPath(row: $0, section: 0)}),
-                                       modifications: modifications.map({ IndexPath(row: $0, section: 0) }))
-        case .error(let error):
-            // An error occurred while opening the Realm file on the background worker thread
-            fatalError("\(error)")
+    private func getQuery(for state: ToDoState) -> String {
+        switch state {
+        case .active:
+            return activeStateQuery
+        case .completed:
+            return completedStateQuery
         }
+    }
+}
+
+extension ToDoListVM: RepositoryObservingDelegate {
+    func handleChanges(_ deletions: [Int], insertions: [Int], modifications: [Int]) {
+        // Refresh todos on changes
+        activeTodos = repository.getAll(filter: activeStateQuery)
+        completedTodos = repository.getAll(filter: completedStateQuery)
+        self.delegate?.updateTable(insertions.map({ IndexPath(row: $0, section: 0) }),
+                                   deletions: deletions.map({ IndexPath(row: $0, section: 0)}),
+                                   modifications: modifications.map({ IndexPath(row: $0, section: 0) }))
     }
 }
