@@ -13,10 +13,12 @@ protocol ToDoRepositoryProtocol {
     
     func getAll(filter: String?) -> [ToDoDTO]
     func get(key: String) -> ToDoDTO?
+    
+    func subscribe(filter: String?)
 }
 
 final class ToDoRepository: BaseRepository<ToDo> {
-    
+    weak var delegate: RepositoryObservingDelegate?
 }
 
 extension ToDoRepository: ToDoRepositoryProtocol {
@@ -40,5 +42,11 @@ extension ToDoRepository: ToDoRepositoryProtocol {
             return nil
         }
         return ToDoDTO.createWithDBObject(dbObject: object)
+    }
+    
+    func subscribe(filter: String?) {
+        super.subscribe(ToDo.self, filter: filter) { (_ deletions: [Int], _ insertions: [Int], _ modifications: [Int]) in
+            self.delegate!.handleChanges(deletions, insertions: insertions, modifications: modifications)
+        }
     }
 }

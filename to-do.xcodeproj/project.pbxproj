@@ -85,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				B8D082B725EF7B90008BC9CC /* to-do */,
-				B8F7731E25FA45F10054F329 /* Storage */,
 				B8D082B625EF7B90008BC9CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +107,7 @@
 				B8D0832225F12A89008BC9CC /* Extension */,
 				B8D0831225F0EF9D008BC9CC /* Helper */,
 				B8D082C325EF7B95008BC9CC /* LaunchScreen.storyboard */,
+				B8F7731E25FA45F10054F329 /* Storage */,
 			);
 			path = "to-do";
 			sourceTree = "<group>";

@@ -15,10 +15,11 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
     
     private let toDo: ToDoDTO?
     
-    private let repository: ToDoRepository = ToDoRepository(manager: app.databaseManager)
+    private let repository: ToDoRepository
     
-    init(toDo: ToDoDTO?) {
+    init(toDo: ToDoDTO?, repo: ToDoRepository) {
         self.toDo = toDo
+        repository = repo
     }
     
     func load() {

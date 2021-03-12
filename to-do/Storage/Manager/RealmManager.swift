@@ -9,9 +9,12 @@ import Foundation
 import RealmSwift
 
 final class RealmManager: DatabaseManager {
+    
     private var realm = {
         return try! Realm()
     }()
+    
+    private var token: NotificationToken?
     
     func save(object: Object) {
         try! realm.write {
@@ -40,5 +43,28 @@ final class RealmManager: DatabaseManager {
     
     func get<T>(_ model: T.Type, key: String) -> T? where T : Object {
         return realm.object(ofType: model, forPrimaryKey: key)
+    }
+    
+    func subscribe<T>(_ model: T.Type,
+                    filter: String?,
+                    notify: @escaping (_ deletions: [Int], _ insertions: [Int], _ modifications: [Int]) -> Void) where T : Object {
+        let results: Results<T>
+        if let filter = filter {
+            results = realm.objects(model).filter(filter)
+        } else {
+            results = realm.objects(model)
+        }
+        token?.invalidate()
+        token = results.observe { [weak self] (changes: RealmCollectionChange) in
+            switch changes {
+            case .update(_, let deletions, let insertions, let modifications):
+                notify(deletions, insertions, modifications)
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+            case .initial(_):
+                break
+            }
+        }
     }
 }
