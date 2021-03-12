@@ -14,11 +14,13 @@ final class ToDoListBuilder {
         let vc = sb.instantiateInitialViewController() as! ToDoListVC
         let repo = ToDoRepository(manager: app.databaseManager)
         let vm = ToDoListVM(repo: repo)
-        repo.delegate = vm
+        repo.observingDelegate = vm
         vm.load()
         vm.navDelegate = app.router
         vc.vm = vm
+        vm.delegate = vc
         
         return vc
     }
+    
 }
