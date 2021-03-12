@@ -22,8 +22,8 @@ final class AppRouter {
 }
 
 extension AppRouter: ToDoListNavigationDelegate {
-    func showDetail(for toDoId: String?) {
-        let vc = TodoDetailBuilder.build(for: toDoId)
+    func showDetail(for toDo: ToDoDTO?) {
+        let vc = TodoDetailBuilder.build(for: toDo)
         guard let window = mainWindow, let rvt = window.rootViewController else {
             fatalError("main window or rootViewController not exist")
         }
