@@ -42,7 +42,10 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
                                       state: toDo.state,
                                       isNewTodo: false)
         
-        BookFetcher.fetch()
+        let fetcher: BookFetcherProtocol = BookFetcher()
+        fetcher.fetch { (response) in
+            print(response)
+        }
     }
     
     func delete(_ completion: (Bool) -> Void) {
