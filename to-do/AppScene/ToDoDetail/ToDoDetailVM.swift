@@ -15,7 +15,7 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
     
     private let toDo: ToDoDTO?
     
-    private let repository: ToDoRepository
+    private let repository: ToDoRepositoryProtocol
     
     lazy var forcedItem: ToDoDetailPresentation = {
         guard let item = item else {
@@ -24,7 +24,7 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
         return item
     }()
     
-    init(toDo: ToDoDTO?, repo: ToDoRepository) {
+    init(toDo: ToDoDTO?, repo: ToDoRepositoryProtocol) {
         self.toDo = toDo
         repository = repo
     }
