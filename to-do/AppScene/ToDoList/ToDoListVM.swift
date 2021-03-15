@@ -12,7 +12,7 @@ final class ToDoListVM: ToDoListVMProtocol {
     weak var delegate: ToDoListVMOutputDelegate?
     var navDelegate: ToDoListNavigationDelegate?
     
-    private let repository: ToDoRepository
+    private let repository: ToDoRepositoryProtocol
     
     private var completedTodos: [ToDoDTO]
     private var activeTodos: [ToDoDTO]
@@ -21,7 +21,7 @@ final class ToDoListVM: ToDoListVMProtocol {
     private let activeStateQuery: String = "state == 0"
     private var currentState: ToDoState = .active
     
-    init(repo: ToDoRepository) {
+    init(repo: ToDoRepositoryProtocol) {
         repository = repo
         completedTodos = repository.getAll(filter: completedStateQuery)
         activeTodos = repository.getAll(filter: activeStateQuery)
