@@ -46,6 +46,20 @@
 			remoteGlobalIDString = B8D082B425EF7B90008BC9CC;
 			remoteInfo = "to-do";
 		};
+		B87CB82D25FFA7E500EA7D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B87CB82825FFA7E400EA7D46 /* BookAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B87CB80E25FFA7E400EA7D46;
+			remoteInfo = BookAPI;
+		};
+		B87CB82F25FFA7E500EA7D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B87CB82825FFA7E400EA7D46 /* BookAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B87CB81725FFA7E400EA7D46;
+			remoteInfo = BookAPITests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +67,7 @@
 		B87CB7AC25FBA6DD00EA7D46 /* to-doTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "to-doTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87CB7AE25FBA6DD00EA7D46 /* to_doTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = to_doTests.swift; sourceTree = "<group>"; };
 		B87CB7B025FBA6DD00EA7D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B87CB82825FFA7E400EA7D46 /* BookAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BookAPI.xcodeproj; path = BookAPI/BookAPI.xcodeproj; sourceTree = "<group>"; };
 		B8D082B525EF7B90008BC9CC /* to-do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "to-do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D082B825EF7B90008BC9CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D082BA25EF7B90008BC9CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,11 +126,21 @@
 			path = "to-doTests";
 			sourceTree = "<group>";
 		};
+		B87CB82925FFA7E400EA7D46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B87CB82E25FFA7E500EA7D46 /* BookAPI.framework */,
+				B87CB83025FFA7E500EA7D46 /* BookAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B8D082AC25EF7B90008BC9CC = {
 			isa = PBXGroup;
 			children = (
 				B8D082B725EF7B90008BC9CC /* to-do */,
 				B87CB7AD25FBA6DD00EA7D46 /* to-doTests */,
+				B87CB82825FFA7E400EA7D46 /* BookAPI.xcodeproj */,
 				B8D082B625EF7B90008BC9CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -333,6 +358,12 @@
 			);
 			productRefGroup = B8D082B625EF7B90008BC9CC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B87CB82925FFA7E400EA7D46 /* Products */;
+					ProjectRef = B87CB82825FFA7E400EA7D46 /* BookAPI.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B8D082B425EF7B90008BC9CC /* to-do */,
@@ -340,6 +371,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B87CB82E25FFA7E500EA7D46 /* BookAPI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BookAPI.framework;
+			remoteRef = B87CB82D25FFA7E500EA7D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B87CB83025FFA7E500EA7D46 /* BookAPITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BookAPITests.xctest;
+			remoteRef = B87CB82F25FFA7E500EA7D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B87CB7AA25FBA6DD00EA7D46 /* Resources */ = {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import BookAPI
 
 final class ToDoDetailVM: ToDoDetailVMProtocol {
     
@@ -40,6 +41,8 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
                                       dueDate: toDo.dueDate,
                                       state: toDo.state,
                                       isNewTodo: false)
+        
+        BookFetcher.fetch()
     }
     
     func delete(_ completion: (Bool) -> Void) {
