@@ -1,0 +1,24 @@
+{
+    "artistName": "William Shakespeare",
+    "id": "916363784",
+    "releaseDate": "1597-12-30",
+    "name": "Romeo and Juliet",
+    "kind": "epubBook",
+    "artistId": "2765976",
+    "artistUrl": "https://books.apple.com/tr/artist/william-shakespeare/2765976",
+    "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Publication113/v4/6f/a7/29/6fa729bd-5a1c-f488-d5d1-e846803c7a18/PD_Romeo_and_Juliet-Adj.jpg/200x200bb.png",
+    "genres": [{
+        "genreId": "10036",
+        "name": "Theatre",
+        "url": "https://itunes.apple.com/tr/genre/id10036"
+    }, {
+        "genreId": "38",
+        "name": "Books",
+        "url": "https://itunes.apple.com/tr/genre/id38"
+    }, {
+        "genreId": "9007",
+        "name": "Arts \u0026 Entertainment",
+        "url": "https://itunes.apple.com/tr/genre/id9007"
+    }],
+    "url": "https://books.apple.com/tr/book/romeo-and-juliet/id916363784"
+}

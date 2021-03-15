@@ -19,3 +19,12 @@ public struct Book: Decodable {
     public let name: String
     public let imageUrl: URL?
 }
+
+extension Book: Equatable {
+    public static func ==(lhs: Book, rhs: Book) -> Bool {
+        return
+            lhs.artist == rhs.artist &&
+            lhs.name == rhs.name &&
+            lhs.imageUrl == rhs.imageUrl
+    }
+}

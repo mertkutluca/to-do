@@ -13,6 +13,7 @@
 		B87CB83E25FFA83B00EA7D46 /* BookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CB83D25FFA83B00EA7D46 /* BookFetcher.swift */; };
 		B87CB84325FFAB2400EA7D46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B87CB84225FFAB2400EA7D46 /* Alamofire */; };
 		B87CB84825FFAB4600EA7D46 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CB84725FFAB4600EA7D46 /* Book.swift */; };
+		B87CB84F25FFAF5300EA7D46 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = B87CB84E25FFAF5300EA7D46 /* book.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		B87CB81E25FFA7E400EA7D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B87CB83D25FFA83B00EA7D46 /* BookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFetcher.swift; sourceTree = "<group>"; };
 		B87CB84725FFAB4600EA7D46 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		B87CB84E25FFAF5300EA7D46 /* book.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		B87CB81B25FFA7E400EA7D46 /* BookAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				B87CB84D25FFAF0700EA7D46 /* Resources */,
 				B87CB81C25FFA7E400EA7D46 /* BookAPITests.swift */,
 				B87CB81E25FFA7E400EA7D46 /* Info.plist */,
 			);
@@ -100,6 +103,14 @@
 				B87CB84725FFAB4600EA7D46 /* Book.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		B87CB84D25FFAF0700EA7D46 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B87CB84E25FFAF5300EA7D46 /* book.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B87CB84F25FFAF5300EA7D46 /* book.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
