@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import BookAPI
 
 final class ToDoDetailVM: ToDoDetailVMProtocol {
     
@@ -42,8 +41,7 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
                                       state: toDo.state,
                                       isNewTodo: false)
         
-        let fetcher: BookFetcherProtocol = BookFetcher()
-        fetcher.fetch { (response) in
+        app.networkManager.fetchBooks { (response) in
             print(response)
         }
     }

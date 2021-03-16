@@ -5,4 +5,17 @@
 //  Created by mert.kutluca on 16.03.2021.
 //
 
-import Foundation
+import BookAPI
+
+protocol NetworkManageerProtocol {
+    func fetchBooks(completion: @escaping (Result<BooksResponse>) -> Void)
+}
+
+final class NetworkManager: NetworkManageerProtocol {
+    
+    let bookFetcher: BookFetcherProtocol = BookFetcher()
+    
+    func fetchBooks(completion: @escaping (Result<BooksResponse>) -> Void) {
+        bookFetcher.fetch(completion: completion)
+    }
+}

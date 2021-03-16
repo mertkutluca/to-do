@@ -11,5 +11,6 @@ let app = AppContainer()
 
 final class AppContainer {
     let router = AppRouter()
-    let databaseManager = RealmManager()
+    let databaseManager: DatabaseManager = RealmManager()
+    let networkManager: NetworkManageerProtocol = NetworkManager()
 }
