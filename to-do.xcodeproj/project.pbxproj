@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83075B12600EABB00436614 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83075B02600EABB00436614 /* NetworkManager.swift */; };
 		B87CB7A325FB779500EA7D46 /* ToDoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B87CB7A225FB779500EA7D46 /* ToDoList.storyboard */; };
 		B87CB7AF25FBA6DD00EA7D46 /* to_doTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CB7AE25FBA6DD00EA7D46 /* to_doTests.swift */; };
 		B8D082B925EF7B90008BC9CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D082B825EF7B90008BC9CC /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B83075B02600EABB00436614 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B87CB7A225FB779500EA7D46 /* ToDoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoList.storyboard; sourceTree = "<group>"; };
 		B87CB7AC25FBA6DD00EA7D46 /* to-doTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "to-doTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87CB7AE25FBA6DD00EA7D46 /* to_doTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = to_doTests.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B83075AD2600EAA600436614 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B83075B02600EABB00436614 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		B87CB7AD25FBA6DD00EA7D46 /* to-doTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 				B8D0832225F12A89008BC9CC /* Extension */,
 				B8D0831225F0EF9D008BC9CC /* Helper */,
 				B8D082C325EF7B95008BC9CC /* LaunchScreen.storyboard */,
+				B83075AD2600EAA600436614 /* Network */,
 				B8F7731E25FA45F10054F329 /* Storage */,
 			);
 			path = "to-do";
@@ -423,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B83075B12600EABB00436614 /* NetworkManager.swift in Sources */,
 				B8D082F325EFA2C8008BC9CC /* ToDoListVM.swift in Sources */,
 				B8D0831425F0EFB0008BC9CC /* ToDoState.swift in Sources */,
 				B8D082DE25EF8EF4008BC9CC /* ToDoListVC.swift in Sources */,
