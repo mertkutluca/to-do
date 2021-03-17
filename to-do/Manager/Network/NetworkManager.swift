@@ -8,14 +8,14 @@
 import BookAPI
 
 protocol NetworkManageerProtocol {
-    func fetchBooks(completion: @escaping (Result<BooksResponse>) -> Void)
+    func fetchBooks(completion: @escaping (Result<Array<Book>>) -> Void)
 }
 
 final class NetworkManager: NetworkManageerProtocol {
     
     let bookFetcher: BookFetcherProtocol = BookFetcher()
     
-    func fetchBooks(completion: @escaping (Result<BooksResponse>) -> Void) {
+    func fetchBooks(completion: @escaping (Result<Array<Book>>) -> Void) {
         bookFetcher.fetch(completion: completion)
     }
 }

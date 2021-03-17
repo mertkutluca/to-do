@@ -9,21 +9,21 @@ import Foundation
 import Alamofire
 
 public protocol BookFetcherProtocol {
-    func fetch(completion: @escaping (Result<BooksResponse>) -> Void)
+    func fetch(completion: @escaping (Result<Array<Book>>) -> Void)
 }
 
 public final class BookFetcher: BookFetcherProtocol {
     
-    private let serverUrl = "https://rss.itunes.apple.com/api/v1/tr/books/top-free/all/100/explicit.json"
+    private let serverUrl = "https://raw.githubusercontent.com/bvaughn/infinite-list-reflow-examples/master/books.json"
     
     public init() {}
     
-    public func fetch(completion: @escaping (Result<BooksResponse>) -> Void) {
+    public func fetch(completion: @escaping (Result<Array<Book>>) -> Void) {
         AF.request(serverUrl).responseData { (response) in
             switch response.result {
             case .success(let data):
                 do {
-                    let response = try JSONDecoder().decode(BooksResponse.self, from: data)
+                    let response = try JSONDecoder().decode([Book].self, from: data)
                     completion(.success(response))
                 } catch {
                     completion(.fail(error))

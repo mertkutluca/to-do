@@ -19,8 +19,13 @@ protocol ToDoDetailVMProtocol {
               dueDate: Date,
               state: ToDoState,
               completion: (_ success: Bool) -> Void)
+    func showBooks()
 }
 
 protocol ToDoDetailVMOutputDelegate: class {
     func handleUpdate(_ title: String?, detail: String?, dueDate: Date?, state: ToDoState?)
+}
+
+protocol ToDoDetailNavigationDelegate: class {
+    func showBooks()
 }

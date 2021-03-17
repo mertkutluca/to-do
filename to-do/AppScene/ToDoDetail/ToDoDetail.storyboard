@@ -56,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="h1K-Ib-ckW">
-                                <rect key="frame" x="24" y="346" width="256" height="54"/>
+                                <rect key="frame" x="24" y="345.5" width="256" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Guf-x1-eyL"/>
                                 </constraints>
@@ -64,16 +64,25 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HON-bP-DYm">
                                 <rect key="frame" x="24" y="423.5" width="366" height="42"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTr-ef-WEL">
+                                        <rect key="frame" x="0.0" y="6" width="122" height="30"/>
+                                        <state key="normal" title="Books"/>
+                                        <connections>
+                                            <action selector="booksButtonPressed:" destination="kbm-FF-icc" eventType="touchUpInside" id="yOU-qm-v0O"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aku-XW-oBH">
-                                        <rect key="frame" x="0.0" y="6" width="183" height="30"/>
+                                        <rect key="frame" x="122" y="6" width="122" height="30"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveButtonPressed:" destination="kbm-FF-icc" eventType="touchUpInside" id="PI6-lK-9Uj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgo-Lc-85d">
-                                        <rect key="frame" x="183" y="6" width="183" height="30"/>
-                                        <state key="normal" title="Delete"/>
+                                        <rect key="frame" x="244" y="6" width="122" height="30"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="deleteButtonPressed:" destination="kbm-FF-icc" eventType="touchUpInside" id="0aG-aQ-mh1"/>
                                         </connections>
@@ -155,6 +164,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

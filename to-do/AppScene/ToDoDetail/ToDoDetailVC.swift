@@ -61,6 +61,9 @@ final class ToDoDetailVC: UIViewController {
             }
         }
     }
+    @IBAction func booksButtonPressed(_ sender: Any) {
+        vm?.showBooks()
+    }
 }
 
 extension ToDoDetailVC: ToDoDetailVMOutputDelegate {
