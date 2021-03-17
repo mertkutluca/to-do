@@ -10,6 +10,7 @@ import Foundation
 final class ToDoDetailVM: ToDoDetailVMProtocol {
     
     weak var delegate: ToDoDetailVMOutputDelegate?
+    weak var navDelegate: ToDoDetailNavigationDelegate?
     
     private var item: ToDoDetailPresentation?
     
@@ -41,9 +42,6 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
                                       state: toDo.state,
                                       isNewTodo: false)
         
-        app.networkManager.fetchBooks { (response) in
-            print(response)
-        }
     }
     
     func delete(_ completion: (Bool) -> Void) {
@@ -64,6 +62,10 @@ final class ToDoDetailVM: ToDoDetailVMProtocol {
                           state: state)
         repository.save(dto: dto)
         completion(true)
+    }
+    
+    func showBooks() {
+        navDelegate?.showBooks()
     }
     
 }

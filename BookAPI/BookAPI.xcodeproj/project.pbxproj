@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83075E32601D6CB00436614 /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = B83075E22601D6CB00436614 /* feed.json */; };
 		B87CB81825FFA7E400EA7D46 /* BookAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87CB80E25FFA7E400EA7D46 /* BookAPI.framework */; };
 		B87CB81D25FFA7E400EA7D46 /* BookAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CB81C25FFA7E400EA7D46 /* BookAPITests.swift */; };
 		B87CB81F25FFA7E400EA7D46 /* BookAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = B87CB81125FFA7E400EA7D46 /* BookAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,7 +15,7 @@
 		B87CB84325FFAB2400EA7D46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B87CB84225FFAB2400EA7D46 /* Alamofire */; };
 		B87CB84825FFAB4600EA7D46 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CB84725FFAB4600EA7D46 /* Book.swift */; };
 		B87CB84F25FFAF5300EA7D46 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = B87CB84E25FFAF5300EA7D46 /* book.json */; };
-		B87CB85825FFB3F700EA7D46 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CB85725FFB3F700EA7D46 /* Books.swift */; };
+		B87CB85825FFB3F700EA7D46 /* BookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CB85725FFB3F700EA7D46 /* BookResponse.swift */; };
 		B87CB85E25FFBB5200EA7D46 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CB85D25FFBB5200EA7D46 /* Result.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B83075E22601D6CB00436614 /* feed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		B87CB80E25FFA7E400EA7D46 /* BookAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BookAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87CB81125FFA7E400EA7D46 /* BookAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookAPI.h; sourceTree = "<group>"; };
 		B87CB81225FFA7E400EA7D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,7 +40,7 @@
 		B87CB83D25FFA83B00EA7D46 /* BookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFetcher.swift; sourceTree = "<group>"; };
 		B87CB84725FFAB4600EA7D46 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B87CB84E25FFAF5300EA7D46 /* book.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
-		B87CB85725FFB3F700EA7D46 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		B87CB85725FFB3F700EA7D46 /* BookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResponse.swift; sourceTree = "<group>"; };
 		B87CB85D25FFBB5200EA7D46 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				B87CB84E25FFAF5300EA7D46 /* book.json */,
+				B83075E22601D6CB00436614 /* feed.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -121,7 +124,7 @@
 		B87CB85625FFB3DF00EA7D46 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				B87CB85725FFB3F700EA7D46 /* Books.swift */,
+				B87CB85725FFB3F700EA7D46 /* BookResponse.swift */,
 				B87CB85D25FFBB5200EA7D46 /* Result.swift */,
 			);
 			path = Response;
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B87CB84F25FFAF5300EA7D46 /* book.json in Resources */,
+				B83075E32601D6CB00436614 /* feed.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B87CB85825FFB3F700EA7D46 /* Books.swift in Sources */,
+				B87CB85825FFB3F700EA7D46 /* BookResponse.swift in Sources */,
 				B87CB84825FFAB4600EA7D46 /* Book.swift in Sources */,
 				B87CB85E25FFBB5200EA7D46 /* Result.swift in Sources */,
 				B87CB83E25FFA83B00EA7D46 /* BookFetcher.swift in Sources */,

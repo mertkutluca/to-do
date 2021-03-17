@@ -7,16 +7,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6D1B3921-1607-4AF9-8562-A17120D481C5"
-            shouldBeEnabled = "No"
+            uuid = "D00D07E3-831F-44D2-AD61-FAD871D518F1"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "to-do/App/AppRouter.swift"
+            filePath = "to-do/AppScene/BookList/BookListVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "start(window:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "load()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F510FD21-7E64-427D-A670-5B7E16DA333F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "to-do/AppScene/BookList/BookListVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "load()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F510FD21-7E64-427D-A670-5B7E16DA333F - 6a5b22f0752726df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (BookAPI.Result&lt;BookAPI.BooksResponse&gt;) -&gt; () in to_do.BookListVM.load() -&gt; ()"
+                  moduleName = "to-do"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mert.kutluca/Developer/to-do/to-do/AppScene/BookList/BookListVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "342">
+               </Location>
+               <Location
+                  uuid = "F510FD21-7E64-427D-A670-5B7E16DA333F - e6cbcbab13de6a42"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (BookAPI.Book) -&gt; to_do.BookPresentation in closure #1 (BookAPI.Result&lt;BookAPI.BooksResponse&gt;) -&gt; () in to_do.BookListVM.load() -&gt; ()"
+                  moduleName = "to-do"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mert.kutluca/Developer/to-do/to-do/AppScene/BookList/BookListVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48AF6F64-53DC-4F1A-8283-8AF03A350256"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "to-do/AppScene/BookList/BookListVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "load()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

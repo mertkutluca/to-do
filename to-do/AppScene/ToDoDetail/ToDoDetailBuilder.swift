@@ -16,6 +16,7 @@ final class TodoDetailBuilder {
         vm.load()
         vc.vm = vm
         vm.delegate = vc
+        vm.navDelegate = app.router
         
         return vc
     }

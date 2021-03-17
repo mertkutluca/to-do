@@ -10,7 +10,7 @@ import Foundation
 final class ToDoListVM: ToDoListVMProtocol {
     
     weak var delegate: ToDoListVMOutputDelegate?
-    var navDelegate: ToDoListNavigationDelegate?
+    weak var navDelegate: ToDoListNavigationDelegate?
     
     private let repository: ToDoRepositoryProtocol
     

@@ -30,3 +30,13 @@ extension AppRouter: ToDoListNavigationDelegate {
         rvt.present(vc, animated: true, completion: nil)
     }
 }
+
+extension AppRouter: ToDoDetailNavigationDelegate {
+    func showBooks() {
+        let vc = BookListBuilder.build()
+        guard let window = mainWindow, let rvt = window.rootViewController else {
+            fatalError("main window or rootViewController not exist")
+        }
+        rvt.presentedViewController?.present(vc, animated: true, completion: nil)
+    }
+}
