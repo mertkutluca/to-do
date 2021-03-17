@@ -11,17 +11,19 @@ public struct BooksResponse: Decodable {
     
     public let books: [Book]
     
-    private enum MainCodingKey: String, CodingKey {
-        case feed
-    }
-    
-    private enum FeedCodingKey: String, CodingKey {
-        case results
-    }
+//    private enum MainCodingKey: String, CodingKey {
+//        case feed
+//    }
+//
+//    private enum FeedCodingKey: String, CodingKey {
+//        case results
+//    }
  
-    public init(from decoder: Decoder) throws {
-        let main = try decoder.container(keyedBy: MainCodingKey.self)
-        let feed = try main.nestedContainer(keyedBy: FeedCodingKey.self, forKey: .feed)
-        self.books = try feed.decode([Book].self, forKey: .results)
-    }
+//    public init(from decoder: Decoder) throws {
+//        let main = try decoder.container(keyedBy: MainCodingKey.self)
+//        let feed = try main.nestedContainer(keyedBy: FeedCodingKey.self, forKey: .feed)
+//        self.books = try feed.decode([Book].self, forKey: .results)
+//    }
+    
+    
 }

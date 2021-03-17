@@ -22,8 +22,8 @@ final class BookListVM: BookListVMProtocol {
         networkManager.fetchBooks { [weak self] response in
             guard let self = self else { return }
             switch response {
-            case .success(let fetched):
-                self.books = fetched.books.map {
+            case .success(let fetchedBooks):
+                self.books = fetchedBooks.map {
                     BookPresentation(artist: $0.artist, name: $0.name, imageUrl: $0.imageUrl)
                 }
                 self.delegate?.booksLoaded()

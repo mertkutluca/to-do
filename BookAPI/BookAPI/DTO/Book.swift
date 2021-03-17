@@ -10,9 +10,9 @@ import Foundation
 public struct Book: Decodable {
     
     public enum CodingKeys: String, CodingKey {
-        case artist = "artistName"
-        case name
-        case imageUrl = "artworkUrl100"
+        case artist = "author"
+        case name = "title"
+        case imageUrl = "imageLink"
     }
     
     public let artist: String
