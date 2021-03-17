@@ -37,6 +37,8 @@ extension AppRouter: ToDoDetailNavigationDelegate {
         guard let window = mainWindow, let rvt = window.rootViewController else {
             fatalError("main window or rootViewController not exist")
         }
+        
+        // Change here
         rvt.presentedViewController?.present(vc, animated: true, completion: nil)
     }
 }

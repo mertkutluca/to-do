@@ -24,7 +24,7 @@ final class BookListVM: BookListVMProtocol {
             switch response {
             case .success(let fetchedBooks):
                 self.books = fetchedBooks.map {
-                    BookPresentation(artist: $0.artist, name: $0.name, imageUrl: $0.imageUrl)
+                    BookPresentation(artist: $0.artists.joined(separator: ", "), name: $0.name, imageUrl: $0.imageUrl)
                 }
                 self.delegate?.booksLoaded()
             case .fail(let error):

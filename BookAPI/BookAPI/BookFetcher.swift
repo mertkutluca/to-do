@@ -14,7 +14,7 @@ public protocol BookFetcherProtocol {
 
 public final class BookFetcher: BookFetcherProtocol {
     
-    private let serverUrl = "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json"
+    private let serverUrl = "https://raw.githubusercontent.com/bvaughn/infinite-list-reflow-examples/master/books.json"
     
     public init() {}
     

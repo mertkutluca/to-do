@@ -10,12 +10,12 @@ import Foundation
 public struct Book: Decodable {
     
     public enum CodingKeys: String, CodingKey {
-        case artist = "author"
+        case artists = "authors"
         case name = "title"
-        case imageUrl = "imageLink"
+        case imageUrl = "thumbnailUrl"
     }
     
-    public let artist: String
+    public let artists: [String]
     public let name: String
     public let imageUrl: URL?
 }
@@ -23,7 +23,7 @@ public struct Book: Decodable {
 extension Book: Equatable {
     public static func ==(lhs: Book, rhs: Book) -> Bool {
         return
-            lhs.artist == rhs.artist &&
+            lhs.artists == rhs.artists &&
             lhs.name == rhs.name &&
             lhs.imageUrl == rhs.imageUrl
     }

@@ -16,6 +16,7 @@ final class BookListBuilder {
         let vm = BookListVM(networkManager: app.networkManager)
         vm.load()
         vc.vm = vm
+        vm.delegate = vc
         
         return vc
     }
