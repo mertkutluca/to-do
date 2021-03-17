@@ -55,7 +55,7 @@ final class RealmManager: DatabaseManager {
             results = realm.objects(model)
         }
         token?.invalidate()
-        token = results.observe { [weak self] (changes: RealmCollectionChange) in
+        token = results.observe { (changes: RealmCollectionChange) in
             switch changes {
             case .update(_, let deletions, let insertions, let modifications):
                 notify(deletions, insertions, modifications)
