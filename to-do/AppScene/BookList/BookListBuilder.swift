@@ -13,7 +13,8 @@ final class BookListBuilder {
         let sb = UIStoryboard(name: "BookList", bundle: nil)
         let vc = sb.instantiateInitialViewController() as! BookListVC
         
-        let vm = BookListVM(networkManager: app.networkManager)
+        let vm = BookListVM(networkManager: app.networkManager,
+                            imageDownloadManager: app.imageDownloadManager)
         vm.load()
         vc.vm = vm
         vm.delegate = vc

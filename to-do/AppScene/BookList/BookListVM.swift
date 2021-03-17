@@ -12,10 +12,13 @@ final class BookListVM: BookListVMProtocol {
     weak var delegate: BookListVMOutputDelegate?
     
     private let networkManager: NetworkManageerProtocol
+    private let imageDownloadManager: ImageDownloadManager
     private var books: [BookPresentation] = []
+    private var downloadableImages: [DownloadableImage?] = []
     
-    init(networkManager: NetworkManageerProtocol) {
+    init(networkManager: NetworkManageerProtocol, imageDownloadManager: ImageDownloadManager) {
         self.networkManager = networkManager
+        self.imageDownloadManager = imageDownloadManager
     }
     
     func load() {
@@ -26,6 +29,13 @@ final class BookListVM: BookListVMProtocol {
                 self.books = fetchedBooks.map {
                     BookPresentation(artist: $0.artists.joined(separator: ", "), name: $0.name, imageUrl: $0.imageUrl)
                 }
+                self.downloadableImages = fetchedBooks.map({ book in
+                    if let url = book.imageUrl {
+                        return DownloadableImage(url: url)
+                    } else {
+                        return nil
+                    }
+                })
                 self.delegate?.booksLoaded()
             case .fail(let error):
                 print(error)
@@ -39,6 +49,20 @@ final class BookListVM: BookListVMProtocol {
     
     func getItem(at index: Int) -> BookPresentation {
         return books[index]
+    }
+    
+    func getDownloadableImage(at index: Int) -> DownloadableImage? {
+        return downloadableImages[index]
+    }
+    
+    func startDownloadImage(at index: Int) {
+        guard let downloadableImage = downloadableImages[index] else {
+            return
+        }
+        
+        imageDownloadManager.startDownload(downloadableImage: downloadableImage) { [weak self] in
+            self?.delegate?.imageDownloaded(at: index)
+        }
     }
         
 }

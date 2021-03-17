@@ -13,8 +13,11 @@ protocol BookListVMProtocol {
     func load()
     func getNumberOfItem() -> Int
     func getItem(at index: Int) -> BookPresentation
+    func getDownloadableImage(at index: Int) -> DownloadableImage?
+    func startDownloadImage(at index: Int)
 }
 
 protocol BookListVMOutputDelegate: class {
     func booksLoaded()
+    func imageDownloaded(at index: Int)
 }

@@ -14,6 +14,9 @@
 		B83075CF2600F13800436614 /* BookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83075CE2600F13800436614 /* BookListVC.swift */; };
 		B83075D52600F17300436614 /* BookList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B83075D42600F17300436614 /* BookList.storyboard */; };
 		B83075DB2600F39200436614 /* BookListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83075DA2600F39200436614 /* BookListBuilder.swift */; };
+		B83075E92601EE8100436614 /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83075E82601EE8100436614 /* ImageDownloadManager.swift */; };
+		B83075ED2601EF7900436614 /* DownloadableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83075EC2601EF7900436614 /* DownloadableImage.swift */; };
+		B83075F12601F04900436614 /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83075F02601F04900436614 /* ImageDownloadOperation.swift */; };
 		B87CB7A325FB779500EA7D46 /* ToDoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B87CB7A225FB779500EA7D46 /* ToDoList.storyboard */; };
 		B87CB7AF25FBA6DD00EA7D46 /* to_doTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CB7AE25FBA6DD00EA7D46 /* to_doTests.swift */; };
 		B8D082B925EF7B90008BC9CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D082B825EF7B90008BC9CC /* AppDelegate.swift */; };
@@ -77,6 +80,9 @@
 		B83075CE2600F13800436614 /* BookListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListVC.swift; sourceTree = "<group>"; };
 		B83075D42600F17300436614 /* BookList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookList.storyboard; sourceTree = "<group>"; };
 		B83075DA2600F39200436614 /* BookListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListBuilder.swift; sourceTree = "<group>"; };
+		B83075E82601EE8100436614 /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
+		B83075EC2601EF7900436614 /* DownloadableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadableImage.swift; sourceTree = "<group>"; };
+		B83075F02601F04900436614 /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
 		B87CB7A225FB779500EA7D46 /* ToDoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoList.storyboard; sourceTree = "<group>"; };
 		B87CB7AC25FBA6DD00EA7D46 /* to-doTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "to-doTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87CB7AE25FBA6DD00EA7D46 /* to_doTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = to_doTests.swift; sourceTree = "<group>"; };
@@ -160,6 +166,26 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		B83075E62601EE2100436614 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B83075E72601EE5F00436614 /* Image */,
+				B83075AD2600EAA600436614 /* Network */,
+				B8F7731E25FA45F10054F329 /* Storage */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B83075E72601EE5F00436614 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B83075EC2601EF7900436614 /* DownloadableImage.swift */,
+				B83075E82601EE8100436614 /* ImageDownloadManager.swift */,
+				B83075F02601F04900436614 /* ImageDownloadOperation.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		B87CB7AD25FBA6DD00EA7D46 /* to-doTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,8 +233,7 @@
 				B8D0832225F12A89008BC9CC /* Extension */,
 				B8D0831225F0EF9D008BC9CC /* Helper */,
 				B8D082C325EF7B95008BC9CC /* LaunchScreen.storyboard */,
-				B83075AD2600EAA600436614 /* Network */,
-				B8F7731E25FA45F10054F329 /* Storage */,
+				B83075E62601EE2100436614 /* Manager */,
 			);
 			path = "to-do";
 			sourceTree = "<group>";
@@ -478,6 +503,7 @@
 				B8D0832425F12AA2008BC9CC /* UIColor.swift in Sources */,
 				B83075CB2600EF8200436614 /* BookListVM.swift in Sources */,
 				B8D082F725EFA3BF008BC9CC /* ToDoListPresentation.swift in Sources */,
+				B83075ED2601EF7900436614 /* DownloadableImage.swift in Sources */,
 				B8D082D125EF8BDB008BC9CC /* AppContainer.swift in Sources */,
 				B8D0833A25F2570A008BC9CC /* ToDo.swift in Sources */,
 				B8D082F025EFA069008BC9CC /* ToDoListContracts.swift in Sources */,
@@ -489,6 +515,7 @@
 				B8F7732725FA4C020054F329 /* ToDoRepository.swift in Sources */,
 				B83075DB2600F39200436614 /* BookListBuilder.swift in Sources */,
 				B83075C52600EE7C00436614 /* BookPresentation.swift in Sources */,
+				B83075F12601F04900436614 /* ImageDownloadOperation.swift in Sources */,
 				B8F7732025FA460C0054F329 /* BaseRepository.swift in Sources */,
 				B83075BE2600EDA100436614 /* BookListContracts.swift in Sources */,
 				B83075CF2600F13800436614 /* BookListVC.swift in Sources */,
@@ -497,6 +524,7 @@
 				B8D0831B25F0F37F008BC9CC /* ToDoDetailVC.swift in Sources */,
 				B8D0830425F0D2E0008BC9CC /* ToDoDetailContracts.swift in Sources */,
 				B8D082BB25EF7B90008BC9CC /* SceneDelegate.swift in Sources */,
+				B83075E92601EE8100436614 /* ImageDownloadManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

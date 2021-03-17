@@ -37,6 +37,22 @@ extension BookListVC: UITableViewDataSource {
         cell.textLabel?.text = book.name
         cell.detailTextLabel?.text = book.artist
         
+        if let downloadableImage = vm?.getDownloadableImage(at: indexPath.row) {
+            switch downloadableImage.state {
+            case .initial:
+                cell.imageView?.image = UIImage(named: "placeholder")
+                vm?.startDownloadImage(at: indexPath.row)
+            case .downloaded:
+                if let image = downloadableImage.image {
+                    cell.imageView?.image = image
+                } else {
+                    cell.imageView?.image = UIImage(named: "error")
+                }
+            case .failed:
+                cell.imageView?.image = UIImage(named: "error")
+            }
+        }
+        
         return cell
     }
     
@@ -46,5 +62,9 @@ extension BookListVC: BookListVMOutputDelegate {
     
     func booksLoaded() {
         tableView.reloadData()
+    }
+    
+    func imageDownloaded(at index: Int) {
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
 }
