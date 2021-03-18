@@ -13,5 +13,5 @@ final class AppContainer {
     let router = AppRouter()
     let databaseManager: DatabaseManager = RealmManager()
     let networkManager: NetworkManageerProtocol = NetworkManager()
-    let imageDownloadManager = ImageDownloadManager()
+    let imageDownloadManager: ImageDownloadManagerProtocol = ImageDownloadManager()
 }

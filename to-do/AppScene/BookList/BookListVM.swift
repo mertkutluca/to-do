@@ -12,11 +12,11 @@ final class BookListVM: BookListVMProtocol {
     weak var delegate: BookListVMOutputDelegate?
     
     private let networkManager: NetworkManageerProtocol
-    private let imageDownloadManager: ImageDownloadManager
+    private let imageDownloadManager: ImageDownloadManagerProtocol
     private var books: [BookPresentation] = []
     private var downloadableImages: [DownloadableImage?] = []
     
-    init(networkManager: NetworkManageerProtocol, imageDownloadManager: ImageDownloadManager) {
+    init(networkManager: NetworkManageerProtocol, imageDownloadManager: ImageDownloadManagerProtocol) {
         self.networkManager = networkManager
         self.imageDownloadManager = imageDownloadManager
     }
