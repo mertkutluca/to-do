@@ -18,6 +18,12 @@ public struct Book: Decodable {
     public let artists: [String]
     public let name: String
     public let imageUrl: URL?
+    
+    public init(artists: [String], name: String, imageUrl: URL?) {
+        self.artists = artists
+        self.name = name
+        self.imageUrl = imageUrl
+    }
 }
 
 extension Book: Equatable {

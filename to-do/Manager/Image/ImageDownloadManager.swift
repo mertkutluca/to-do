@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class ImageDownloadManager {
+protocol ImageDownloadManagerProtocol {
+    func startDownload(downloadableImage: DownloadableImage, completion: @escaping () -> Void)
+}
+
+final class ImageDownloadManager: ImageDownloadManagerProtocol {
     
     private var downloadsInProgress: [String: Operation] = [:]
     
