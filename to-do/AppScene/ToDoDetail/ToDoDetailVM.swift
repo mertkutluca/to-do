@@ -10,72 +10,62 @@ import Foundation
 final class ToDoDetailVM: ToDoDetailVMProtocol {
     
     weak var delegate: ToDoDetailVMOutputDelegate?
+    weak var navDelegate: ToDoDetailNavigationDelegate?
     
     private var item: ToDoDetailPresentation?
     
-    private let toDoId: String?
+    private let toDo: ToDoDTO?
     
-    init(id: String?) {
-        toDoId = id
-    }
+    private let repository: ToDoRepositoryProtocol
     
-    func load() {
-        guard let id = toDoId, let toDoDTO = app.databaseManager.getTodo(key: id) else {
-            item = ToDoDetailPresentation.empty
-            return
-        }
-        
-        item = ToDoDetailPresentation(title: toDoDTO.title,
-                                      detail: toDoDTO.detail,
-                                      dueDate: toDoDTO.dueDate,
-                                      state: ToDoState(rawValue: toDoDTO.state) ?? .active,
-                                      isNewTodo: false)
-    }
-    
-    func delete(_ completion: (Bool) -> Void) {
-        guard let _id = toDoId else {
-            completion(false)
-            return
-        }
-        app.databaseManager.delete(_id: _id)
-        completion(true)
-    }
-    
-    func save(title: String, detail: String, dueDate: Date, state: ToDoState, completion: (Bool) -> Void) {
-        app.databaseManager.save(dto: ToDoDTO(_id: toDoId ?? UUID().uuidString,
-                                              title: title,
-                                              detail: detail,
-                                              dueDate: dueDate,
-                                              state: state))
-        completion(true)
-    }
-    
-    func getTitle() -> String {
-        return forcedItem.title
-    }
-    
-    func getDetail() -> String {
-        return forcedItem.detail
-    }
-    
-    func getDueDate() -> Date {
-        return forcedItem.dueDate
-    }
-    
-    func getState() -> ToDoState {
-        return forcedItem.state
-    }
-    
-    func isNewToDo() -> Bool {
-        return forcedItem.isNewTodo
-    }
-    
-    // MARK: Helpers
-    private lazy var forcedItem: ToDoDetailPresentation = {
+    lazy var forcedItem: ToDoDetailPresentation = {
         guard let item = item else {
             fatalError("Presentation can not be loaded properly")
         }
         return item
     }()
+    
+    init(toDo: ToDoDTO?, repo: ToDoRepositoryProtocol) {
+        self.toDo = toDo
+        repository = repo
+    }
+    
+    func load() {
+        guard let toDo = toDo else {
+            item = ToDoDetailPresentation.empty
+            return
+        }
+        
+        item = ToDoDetailPresentation(title: toDo.title,
+                                      detail: toDo.detail,
+                                      dueDate: toDo.dueDate,
+                                      state: toDo.state,
+                                      isNewTodo: false)
+        
+    }
+    
+    func delete(_ completion: (Bool) -> Void) {
+        guard let _id = toDo?._id else {
+            completion(false)
+            return
+        }
+        repository.remove(_id: _id)
+        completion(true)
+    }
+    
+    func save(title: String, detail: String, dueDate: Date, state: ToDoState, completion: (Bool) -> Void) {
+        // Will be changed
+        let dto = ToDoDTO(_id: toDo?._id ?? UUID().uuidString,
+                          title: title,
+                          detail: detail,
+                          dueDate: dueDate,
+                          state: state)
+        repository.save(dto: dto)
+        completion(true)
+    }
+    
+    func showBooks() {
+        navDelegate?.showBooks()
+    }
     
 }

@@ -30,6 +30,6 @@ protocol ToDoListVMOutputDelegate: class {
     func reloadTable()
 }
 
-protocol ToDoListNavigationDelegate {
-    func showDetail(for toDoId: String?)
+protocol ToDoListNavigationDelegate: class {
+    func showDetail(for toDo: ToDoDTO?)
 }

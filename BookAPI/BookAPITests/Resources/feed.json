@@ -1,0 +1,254 @@
+{
+    "feed": {
+        "title": "Top Free Books",
+        "id": "https://rss.itunes.apple.com/api/v1/tr/books/top-free/all/10/explicit.json",
+        "author": {
+            "name": "iTunes Store",
+            "uri": "http://wwww.apple.com/tr/itunes/"
+        },
+        "links": [{
+            "self": "https://rss.itunes.apple.com/api/v1/tr/books/top-free/all/10/explicit.json"
+        }, {
+            "alternate": "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?genreId=38\u0026popId=42"
+        }],
+        "copyright": "Copyright 2018 Apple Inc. Alle Rechte vorbehalten.",
+        "country": "tr",
+        "icon": "http://itunes.apple.com/favicon.ico",
+        "updated": "2021-03-15T04:54:35.000-07:00",
+        "results": [{
+            "artistName": "Charles Dickens",
+            "id": "395546027",
+            "releaseDate": "1934-01-01",
+            "name": "Oliver Twist",
+            "kind": "epubBook",
+            "artistId": "2671774",
+            "artistUrl": "https://books.apple.com/tr/artist/charles-dickens/2671774",
+            "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Publication3/v4/7a/e1/94/7ae19486-b2df-fbe2-efad-a9c9266b5a8a/cover.png/200x200bb.png",
+            "genres": [{
+                "genreId": "9031",
+                "name": "Fiction \u0026 Literature",
+                "url": "https://itunes.apple.com/tr/genre/id9031"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }],
+            "url": "https://books.apple.com/tr/book/oliver-twist/id395546027"
+        }, {
+            "artistName": "William Shakespeare",
+            "id": "916363784",
+            "releaseDate": "1597-12-30",
+            "name": "Romeo and Juliet",
+            "kind": "epubBook",
+            "artistId": "2765976",
+            "artistUrl": "https://books.apple.com/tr/artist/william-shakespeare/2765976",
+            "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Publication113/v4/6f/a7/29/6fa729bd-5a1c-f488-d5d1-e846803c7a18/PD_Romeo_and_Juliet-Adj.jpg/200x200bb.png",
+            "genres": [{
+                "genreId": "10036",
+                "name": "Theatre",
+                "url": "https://itunes.apple.com/tr/genre/id10036"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }, {
+                "genreId": "9007",
+                "name": "Arts \u0026 Entertainment",
+                "url": "https://itunes.apple.com/tr/genre/id9007"
+            }],
+            "url": "https://books.apple.com/tr/book/romeo-and-juliet/id916363784"
+        }, {
+            "artistName": "Leo Tolstoy",
+            "id": "395534656",
+            "releaseDate": "1877-12-30",
+            "name": "Anna Karenina",
+            "kind": "epubBook",
+            "artistId": "2718686",
+            "artistUrl": "https://books.apple.com/tr/artist/leo-tolstoy/2718686",
+            "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Publication123/v4/f6/53/d8/f653d8be-8f52-0d8c-2e1c-ff02e808abe8/PD_Anna_Karenina-Adj.jpg/200x200bb.png",
+            "genres": [{
+                "genreId": "10042",
+                "name": "Classics",
+                "url": "https://itunes.apple.com/tr/genre/id10042"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }, {
+                "genreId": "9031",
+                "name": "Fiction \u0026 Literature",
+                "url": "https://itunes.apple.com/tr/genre/id9031"
+            }],
+            "url": "https://books.apple.com/tr/book/anna-karenina/id395534656"
+        }, {
+            "artistName": "Sun Tzu",
+            "id": "395534623",
+            "releaseDate": "2010-10-04",
+            "name": "The Art of War",
+            "kind": "epubBook",
+            "artistId": "60737826",
+            "artistUrl": "https://books.apple.com/tr/artist/sun-tzu/60737826",
+            "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Publication113/v4/4e/0a/00/4e0a004d-42bb-acc3-a761-fd43807a30eb/PD-The_Art_of_War-Adj.jpg/200x200bb.png",
+            "genres": [{
+                "genreId": "10078",
+                "name": "Military",
+                "url": "https://itunes.apple.com/tr/genre/id10078"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }, {
+                "genreId": "9015",
+                "name": "History",
+                "url": "https://itunes.apple.com/tr/genre/id9015"
+            }, {
+                "genreId": "9002",
+                "name": "Non-Fiction",
+                "url": "https://itunes.apple.com/tr/genre/id9002"
+            }, {
+                "genreId": "9031",
+                "name": "Fiction \u0026 Literature",
+                "url": "https://itunes.apple.com/tr/genre/id9031"
+            }, {
+                "genreId": "10042",
+                "name": "Classics",
+                "url": "https://itunes.apple.com/tr/genre/id10042"
+            }],
+            "url": "https://books.apple.com/tr/book/the-art-of-war/id395534623"
+        }, {
+            "artistName": "Huber Gray Buehler",
+            "id": "505985898",
+            "releaseDate": "1924-01-01",
+            "name": "Practical Exercises in English",
+            "kind": "epubBook",
+            "artistId": "366195940",
+            "artistUrl": "https://books.apple.com/tr/artist/huber-gray-buehler/366195940",
+            "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Publication5/v4/ed/7a/33/ed7a3340-2088-f01e-59c5-4c922449664c/coverArt.dcfc2b.jpg/200x200bb.png",
+            "genres": [{
+                "genreId": "9031",
+                "name": "Fiction \u0026 Literature",
+                "url": "https://itunes.apple.com/tr/genre/id9031"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }],
+            "url": "https://books.apple.com/tr/book/practical-exercises-in-english/id505985898"
+        }, {
+            "artistName": "Apple Education",
+            "id": "1331090854",
+            "releaseDate": "2018-01-22",
+            "name": "Liderlik Bileşenleri",
+            "kind": "ibook",
+            "artistId": "939801385",
+            "artistUrl": "https://books.apple.com/tr/artist/apple-education/939801385",
+            "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Publication128/v4/c6/ea/5d/c6ea5d49-8067-61a5-fb4e-4b27f072623b/LTE_ElementsOfLeadership_Cover_TR.png/200x200bb.png",
+            "genres": [{
+                "genreId": "10037",
+                "name": "Education",
+                "url": "https://itunes.apple.com/tr/genre/id10037"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }, {
+                "genreId": "9029",
+                "name": "Professional \u0026 Technical",
+                "url": "https://itunes.apple.com/tr/genre/id9029"
+            }],
+            "url": "https://books.apple.com/tr/book/liderlik-bile%C5%9Fenleri/id1331090854"
+        }, {
+            "artistName": "Apple Education",
+            "id": "1463667213",
+            "releaseDate": "2019-07-17",
+            "name": "Herkes Kreatif İşler Yapabilir: Çizim",
+            "kind": "ibook",
+            "artistId": "939801385",
+            "artistUrl": "https://books.apple.com/tr/artist/apple-education/939801385",
+            "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Publication123/v4/bc/9e/5d/bc9e5d09-472a-9f4d-c6c6-09f83b7f6f2e/ECC_Drawing_cover.png/200x200bb.png",
+            "genres": [{
+                "genreId": "10037",
+                "name": "Education",
+                "url": "https://itunes.apple.com/tr/genre/id10037"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }, {
+                "genreId": "9029",
+                "name": "Professional \u0026 Technical",
+                "url": "https://itunes.apple.com/tr/genre/id9029"
+            }],
+            "url": "https://books.apple.com/tr/book/herkes-kreatif-i-%C5%9Fler-yapabilir-%C3%A7izim/id1463667213"
+        }, {
+            "artistName": "Apple Inc.",
+            "id": "925170134",
+            "releaseDate": "2014-09-17",
+            "name": "iOS 8.4 İçin iPhone Kullanma Kılavuzu",
+            "kind": "epubBook",
+            "artistId": "405307759",
+            "artistUrl": "https://books.apple.com/tr/artist/apple-inc/405307759",
+            "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Publication1/v4/da/61/93/da6193bd-8f0e-7260-07b0-896061409712/ePubCoveriPhone.png/200x200bb.png",
+            "genres": [{
+                "genreId": "10017",
+                "name": "Computers",
+                "url": "https://itunes.apple.com/tr/genre/id10017"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }, {
+                "genreId": "9027",
+                "name": "Computing \u0026 Internet",
+                "url": "https://itunes.apple.com/tr/genre/id9027"
+            }],
+            "url": "https://books.apple.com/tr/book/ios-8-4-i-%C3%A7in-iphone-kullanma-k%C4%B1lavuzu/id925170134"
+        }, {
+            "artistName": "Apple Inc.",
+            "id": "1524323835",
+            "releaseDate": "2020-09-16",
+            "name": "iPhone Kullanma Kılavuzu",
+            "kind": "epubBook",
+            "artistId": "405307759",
+            "artistUrl": "https://books.apple.com/tr/artist/apple-inc/405307759",
+            "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Publication114/v4/96/5b/a5/965ba5b7-99c3-c1b5-48f2-3f8f163b16af/ePubCover_iPhone.png/200x200bb.png",
+            "genres": [{
+                "genreId": "10017",
+                "name": "Computers",
+                "url": "https://itunes.apple.com/tr/genre/id10017"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }, {
+                "genreId": "9027",
+                "name": "Computing \u0026 Internet",
+                "url": "https://itunes.apple.com/tr/genre/id9027"
+            }],
+            "url": "https://books.apple.com/tr/book/iphone-kullanma-k%C4%B1lavuzu/id1524323835"
+        }, {
+            "artistName": "Apple Education",
+            "id": "1405457864",
+            "releaseDate": "2018-06-29",
+            "name": "Swift Playgrounds: Kodlamayı Öğren 1 ve 2",
+            "kind": "ibook",
+            "artistId": "939801385",
+            "artistUrl": "https://books.apple.com/tr/artist/apple-education/939801385",
+            "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Publication115/v4/23/e1/6c/23e16c0f-fb29-1701-f4a1-62d4532122c6/Learn_to_Code_1_2_TR_cover.png/200x200bb.png",
+            "genres": [{
+                "genreId": "10037",
+                "name": "Education",
+                "url": "https://itunes.apple.com/tr/genre/id10037"
+            }, {
+                "genreId": "38",
+                "name": "Books",
+                "url": "https://itunes.apple.com/tr/genre/id38"
+            }, {
+                "genreId": "9029",
+                "name": "Professional \u0026 Technical",
+                "url": "https://itunes.apple.com/tr/genre/id9029"
+            }],
+            "url": "https://books.apple.com/tr/book/swift-playgrounds-kodlamay%C4%B1-%C3%B6%C4%9Fren-1-ve-2/id1405457864"
+        }]
+    }
+}
